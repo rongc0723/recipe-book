@@ -1,11 +1,14 @@
 import './Navbar.css';
 import { NavLink } from 'react-router-dom';
 import Searchbar from './Searchbar';
-import React from 'react'
+import { useTheme } from '../hooks/useTheme';
+
 
 export default function Navbar() {
+  const { color } = useTheme()
+
   return (
-    <div className='navbar'>
+    <div className='navbar' style={{background: color}}>
         <nav>
             <NavLink className='brand' to='/'>
                 <h1>Cooking Ninja</h1>
